@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "lirpro-web-dev-20190507121430-authRole",
+            "UnauthRoleArn": "arn:aws:iam::657603928953:role/lirpro-web-dev-20190507121430-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::657603928953:role/lirpro-web-dev-20190507121430-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "lirpro-web-dev-20190507121430-deployment",
+            "UnauthRoleName": "lirpro-web-dev-20190507121430-unauthRole",
+            "StackName": "lirpro-web-dev-20190507121430",
+            "StackId": "arn:aws:cloudformation:us-east-1:657603928953:stack/lirpro-web-dev-20190507121430/97310b30-70eb-11e9-bfa5-0a182a3cd028"
+        }
+    }
+}
