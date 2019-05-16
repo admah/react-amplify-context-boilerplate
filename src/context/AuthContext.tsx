@@ -1,9 +1,5 @@
 import React from "react";
 import { Auth, Hub } from "aws-amplify";
-import { defaultTo } from "ramda";
-
-//TODO:
-// Use getCurrentUser endpoint to check if AWS user exists in LP system.
 
 type AuthData = {
   isAuthenticated: boolean;
