@@ -1,3 +1,5 @@
+This project is intended to be a boilerplate React implementation of AWS Amplify auth that shows how easy it is to create a basic web app with protected routes using Amplify and React Context.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

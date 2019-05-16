@@ -1,5 +1,9 @@
 import React from "react";
 import { Auth, Hub } from "aws-amplify";
+import { defaultTo } from "ramda";
+
+//TODO:
+// Use getCurrentUser endpoint to check if AWS user exists in LP system.
 
 type AuthData = {
   isAuthenticated: boolean;
@@ -20,8 +24,7 @@ const AuthListener = (data, setAuthData) => {
 
   switch (data.payload.event) {
     case "signIn":
-      console.log(data);
-      const signInSessionData = data.signInUserSession;
+      const signInSessionData = authData.signInUserSession;
 
       setAuthData({
         isAuthenticated: true,
@@ -31,8 +34,7 @@ const AuthListener = (data, setAuthData) => {
       });
       break;
     case "signUp":
-      //console.log("signUp: ", data.payload);
-      const signUpSessionData = data.signUpUserSession;
+      const signUpSessionData = authData.signUpUserSession;
 
       setAuthData({
         isAuthenticated: true,
@@ -42,8 +44,6 @@ const AuthListener = (data, setAuthData) => {
       });
       break;
     case "signOut":
-      //console.log("signOut: ", data.payload);
-
       setAuthData({
         isAuthenticated: false,
         isLoading: false,
@@ -66,8 +66,7 @@ export const AuthProvider = props => {
   });
 
   React.useEffect(() => {
-    //listen for auth events via Cognito
-    Hub.listen("auth", data => AuthListener(data, authData));
+    Hub.listen("auth", data => AuthListener(data, setAuthData));
 
     const getCurrentUserData = async () => {
       await Auth.currentAuthenticatedUser()
@@ -82,7 +81,6 @@ export const AuthProvider = props => {
           });
         })
         .catch(err => {
-          //console.log(err);
           return setAuthData({
             isAuthenticated: false,
             isLoading: false,

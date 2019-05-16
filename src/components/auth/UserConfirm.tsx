@@ -10,9 +10,7 @@ const UserConfirm: React.FC = () => {
         <Title level={2} data-testid="UserConfirmHeading">
           You're all set!
         </Title>
-        <Text>
-          It's time to start monitoring. Download the mobile app to get started!
-        </Text>
+        <Text>Thanks for signing up.</Text>
       </Col>
     </Row>
   );
