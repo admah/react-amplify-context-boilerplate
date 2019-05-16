@@ -12,8 +12,6 @@ import * as yup from "yup";
 import { Form, Input, Button, Row } from "antd";
 import { Link } from "react-router-dom";
 
-import any from "ramda/es/any";
-
 type UserLoginValues = {
   email: string;
   password: string;

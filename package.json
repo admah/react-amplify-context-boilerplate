@@ -53,8 +53,6 @@
     ]
   },
   "devDependencies": {
-    "@types/ramda": "^0.26.8",
-    "ramda": "^0.26.1",
     "react-testing-library": "^7.0.0"
   }
 }
